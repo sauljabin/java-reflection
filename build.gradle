@@ -46,7 +46,7 @@ javadoc {
 }
 
 processResources {
-    filesMatching('**logbook-lib.properties') {
+    filesMatching('**' + project.name + '.properties') {
         expand(
                 'libName': project.name,
                 'libVersion': project.version,
