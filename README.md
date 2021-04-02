@@ -1,4 +1,4 @@
-# java-advance-test-util
+# java-test-util
 
 This lib has some utilities used in java testing.
 
