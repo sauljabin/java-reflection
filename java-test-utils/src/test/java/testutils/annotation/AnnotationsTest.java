@@ -49,7 +49,7 @@ class AnnotationsTest {
         );
 
         assertThat(exception.getMessage())
-                .contains("No testutils.annotation testutils.annotation.AnnotationsTest$DummyClassAnnotationUnused found");
+                .contains("No annotation found for testutils.annotation.AnnotationsTest$DummyClassAnnotationUnused");
     }
 
     @Test
@@ -76,7 +76,7 @@ class AnnotationsTest {
         );
 
         assertThat(exception.getMessage())
-                .contains("No testutils.annotation testutils.annotation.AnnotationsTest$DummyFieldAnnotationUnused found");
+                .contains("No annotation found for testutils.annotation.AnnotationsTest$DummyFieldAnnotationUnused");
     }
 
     @Test
@@ -114,7 +114,7 @@ class AnnotationsTest {
         );
 
         assertThat(exception.getMessage())
-                .contains("No testutils.annotation testutils.annotation.AnnotationsTest$DummyMethodAnnotationUnused found");
+                .contains("No annotation found for testutils.annotation.AnnotationsTest$DummyMethodAnnotationUnused");
     }
 
     @Test
@@ -141,7 +141,7 @@ class AnnotationsTest {
         );
 
         assertThat(exception.getMessage())
-                .contains("No testutils.annotation testutils.annotation.AnnotationsTest$DummyFieldAnnotationUnused found");
+                .contains("No annotation found for testutils.annotation.AnnotationsTest$DummyFieldAnnotationUnused");
     }
 
     @Test

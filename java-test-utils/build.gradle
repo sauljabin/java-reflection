@@ -1,0 +1,46 @@
+plugins {
+    id 'jacoco'
+    id 'java-library'
+}
+
+sourceCompatibility = '11'
+group = 'java-test-utils'
+version = '0.1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(platform('org.junit:junit-bom:5.8.1'))
+    testImplementation('org.junit.jupiter:junit-jupiter')
+
+    testImplementation 'org.assertj:assertj-core:3.21.0'
+    testImplementation 'org.mockito:mockito-core:3.12.4'
+
+    testImplementation 'org.jeasy:easy-random-core:5.0.0'
+    testImplementation 'io.github.glytching:junit-extensions:2.5.0'
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events 'passed', 'skipped', 'failed'
+        exceptionFormat = 'full'
+    }
+    finalizedBy jacocoTestReport
+}
+
+jar {
+    from sourceSets.main.allJava
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.enabled true
+        xml.destination file("${buildDir}/reports/jacoco/report.xml")
+        html.enabled true
+        csv.enabled false
+    }
+}
