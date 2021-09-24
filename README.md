@@ -34,7 +34,7 @@ dependencies {
 
 ### Examples
 
-```
+```java
 // Reflection on Field
 DummyClass dummyClass=new DummyClass();
 setFieldValue(dummyClass, FIELD_NAME, expectedValue);
