@@ -11,6 +11,52 @@ and **Reflection utils**.
 
 ### How to use it
 
+Clone into your project:
+
+```shell
+git clone https://github.com/sauljabin/java-test-utils.git
+```
+
+Include it at `settings.gradle`:
+
+```groovy
+include('java-test-utils')
+project(":java-test-utils").projectDir = file("java-test-utils/java-test-utils")
+```
+
+Add it as a dependency at `build.gradle`:
+
+```groovy
+dependencies {
+    testImplementation project(':java-test-utils')
+}
+```
+
+### Examples
+
+```
+// Reflection on Field
+DummyClass dummyClass=new DummyClass();
+setFieldValue(dummyClass, FIELD_NAME, expectedValue);
+assertThat(getFieldValue(dummyClass, FIELD_NAME)).isEqualTo(expectedValue);
+
+// Refliction on static field
+setStaticFieldValue(DummyClass.class, STATIC_FIELD_NAME, expectedValue);
+assertThat(getStaticFieldValue(DummyClass.class, STATIC_FIELD_NAME)).isEqualTo(expectedValue);
+
+// Assert class annotation
+assertClassAnnotation(Dummy.class, DummyClassAnnotation.class);
+assertClassAnnotationParameter(Dummy.class, DummyClassAnnotation.class, "value", "test_value");
+
+// Assert field annotation
+assertFieldAnnotation(Dummy.class, "dummy", DummyFieldAnnotation.class);
+assertFieldAnnotationParameter(Dummy.class, "dummy", DummyFieldAnnotation.class, "value", "test_value");
+
+// Assert method annotation
+assertMethodAnnotation(Dummy.class, "dummyMethod", DummyMethodAnnotation.class);
+assertMethodAnnotationParameter(Dummy.class, "dummyMethod", DummyMethodAnnotation.class, "value", "test_value");
+```
+
 ### Development
 
 Running tests:

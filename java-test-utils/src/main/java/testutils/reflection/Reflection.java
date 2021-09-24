@@ -4,8 +4,6 @@ import java.lang.reflect.Field;
 
 public final class Reflection {
 
-    public static final String EXCEPTION_MESSAGE = "No such field: ";
-
     private Reflection() {
         throw new IllegalStateException("Utility class");
     }
